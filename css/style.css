@@ -1,0 +1,1459 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --negro: #111;
+    --negro-2: #0b0b0b;
+    --negro-3: #080808;
+    --dorado: #c9a227;
+    --blanco: #fff;
+    --gris-claro: #ccc;
+    --gris: #aaa;
+    --gris-oscuro: #777;
+    --borde: #2a2a2a;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(17, 17, 17, 0.96);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid #1d1d1d;
+}
+
+.logo {
+    color: var(--blanco);
+    text-decoration: none;
+
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--dorado);
+}
+
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+.nav {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+.nav a {
+    color: var(--blanco);
+    text-decoration: none;
+
+    font-size: 15px;
+
+    position: relative;
+
+    transition: color 0.3s ease;
+}
+
+.nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--dorado);
+
+    transition: width 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--dorado);
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   BOTÓN RESERVA HEADER
+========================= */
+
+.btn-reserva {
+    color: var(--negro);
+    background: var(--dorado);
+
+    text-decoration: none;
+
+    padding: 12px 20px;
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    display: inline-block;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn-reserva:hover {
+    background: var(--blanco);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   MENÚ HAMBURGUESA
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: var(--blanco);
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    line-height: 1;
+
+    transition: color 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: var(--dorado);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 7%;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.65)
+        ),
+        url("../assets/images/barberia.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-subtitle {
+    color: var(--dorado);
+
+    font-size: 14px;
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 8vw, 110px);
+
+    line-height: 0.9;
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+.hero-description {
+    max-width: 500px;
+
+    color: var(--gris-claro);
+
+    font-size: 18px;
+    line-height: 1.6;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--dorado);
+    color: var(--negro);
+}
+
+.btn-primary:hover {
+    background: var(--blanco);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.btn-secondary {
+    border: 1px solid var(--blanco);
+    color: var(--blanco);
+}
+
+.btn-secondary:hover {
+    background: var(--blanco);
+    color: var(--negro);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   TÍTULOS DE SECCIÓN
+========================= */
+
+.section-header {
+    max-width: 700px;
+
+    margin-bottom: 70px;
+
+    position: relative;
+}
+
+.section-header::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 2px;
+
+    background: var(--dorado);
+
+    margin-top: 30px;
+}
+
+.section-subtitle {
+    color: var(--dorado);
+
+    font-size: 14px;
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: clamp(40px, 6vw, 75px);
+
+    line-height: 0.95;
+
+    margin-bottom: 25px;
+}
+
+.section-header h2 span {
+    color: var(--dorado);
+}
+
+.section-description {
+    color: var(--gris);
+
+    font-size: 17px;
+    line-height: 1.6;
+
+    max-width: 550px;
+}
+
+
+/* =========================
+   SERVICIOS
+========================= */
+
+.servicios {
+    padding: 120px 7%;
+
+    background: var(--negro);
+}
+
+.servicios-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.servicio-card {
+    min-height: 320px;
+
+    padding: 35px;
+
+    border: 1px solid var(--borde);
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    background: #121212;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-10px);
+
+    border-color: var(--dorado);
+
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.servicio-number {
+    color: var(--dorado);
+
+    font-size: 14px;
+
+    margin-bottom: 50px;
+}
+
+.servicio-card h3 {
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+.servicio-card p {
+    color: var(--gris);
+
+    line-height: 1.6;
+
+    max-width: 350px;
+}
+
+.servicio-bottom {
+    margin-top: auto;
+
+    padding-top: 30px;
+
+    border-top: 1px solid var(--borde);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.servicio-bottom span:first-child {
+    color: var(--dorado);
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.servicio-bottom span:last-child {
+    color: var(--gris-oscuro);
+}
+
+
+/* =========================
+   GALERÍA
+========================= */
+
+.galeria {
+    padding: 120px 7%;
+
+    background: var(--negro-2);
+}
+
+.galeria-grid {
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: 350px 350px;
+
+    gap: 20px;
+}
+
+.galeria-item {
+    overflow: hidden;
+
+    position: relative;
+
+    background: #151515;
+}
+
+.galeria-item::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.25),
+        transparent 40%
+    );
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+
+    pointer-events: none;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.06);
+
+    filter: brightness(1.08);
+}
+
+.galeria-item:hover::after {
+    opacity: 1;
+}
+
+
+/* IMAGEN PRINCIPAL */
+
+.galeria-principal {
+    grid-row: span 2;
+}
+
+
+/* IMAGEN INFERIOR */
+
+.galeria-ancha {
+    grid-column: 1 / -1;
+
+    display: none;
+}
+
+
+/* =========================
+   SOBRE NOSOTROS
+========================= */
+
+.sobre-nosotros {
+    padding: 120px 7%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    background: var(--negro);
+}
+
+.sobre-imagen {
+    height: 600px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.sobre-imagen img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.sobre-imagen:hover img {
+    transform: scale(1.05);
+}
+
+.sobre-contenido {
+    max-width: 600px;
+}
+
+.sobre-contenido h2 {
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 0.95;
+
+    margin-bottom: 30px;
+}
+
+.sobre-contenido h2 span {
+    color: var(--dorado);
+}
+
+.sobre-contenido > p:not(.section-subtitle) {
+    color: var(--gris);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   ESTADÍSTICAS
+========================= */
+
+.estadisticas {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 45px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid var(--borde);
+}
+
+.estadistica {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.estadistica strong {
+    color: var(--dorado);
+
+    font-size: 32px;
+}
+
+.estadistica span {
+    color: var(--gris-oscuro);
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   RESERVA
+========================= */
+
+.reserva {
+    padding: 120px 7%;
+
+    background: var(--negro-2);
+}
+
+.reserva-contenido {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+.reserva-info {
+    max-width: 600px;
+}
+
+.reserva-info h2 {
+    font-size: clamp(45px, 6vw, 75px);
+
+    line-height: 0.95;
+
+    margin-bottom: 30px;
+}
+
+.reserva-info h2 span {
+    color: var(--dorado);
+}
+
+.reserva-info > p:not(.section-subtitle) {
+    color: var(--gris);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    max-width: 500px;
+}
+
+.contacto-info {
+    margin-top: 45px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+.contacto-info div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.contacto-info strong {
+    font-size: 15px;
+}
+
+.contacto-info span {
+    color: var(--gris-oscuro);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.reserva-form {
+    border: 1px solid var(--borde);
+
+    padding: 40px;
+
+    background: var(--negro);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.reserva-form:hover {
+    border-color: #3a3a3a;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    font-size: 13px;
+
+    color: var(--gris);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 15px;
+
+    background: var(--negro-2);
+
+    border: 1px solid var(--borde);
+
+    color: var(--blanco);
+
+    font-size: 15px;
+
+    outline: none;
+
+    border-radius: 0;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #444;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--dorado);
+
+    background: #101010;
+}
+
+.form-group select option {
+    background: var(--negro);
+    color: var(--blanco);
+}
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* =========================
+   BOTÓN WHATSAPP
+========================= */
+
+.btn-whatsapp {
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    background: var(--dorado);
+
+    color: var(--negro);
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+    background: var(--blanco);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-whatsapp:active {
+    transform: translateY(0);
+}
+
+.form-notice {
+    color: #666;
+
+    font-size: 12px;
+
+    text-align: center;
+
+    margin-top: 15px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto {
+    padding: 120px 7%;
+
+    background: var(--negro);
+
+    text-align: center;
+}
+
+.contacto-contenido {
+    max-width: 800px;
+
+    margin: 0 auto;
+}
+
+.contacto h2 {
+    font-size: clamp(45px, 7vw, 85px);
+
+    line-height: 0.95;
+
+    margin-bottom: 30px;
+}
+
+.contacto h2 span {
+    display: block;
+
+    color: var(--dorado);
+}
+
+.contacto-contenido > p:not(.section-subtitle) {
+    color: var(--gris);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    max-width: 550px;
+
+    margin: 0 auto 35px;
+}
+
+.contacto-whatsapp {
+    display: inline-block;
+
+    padding: 16px 30px;
+
+    background: var(--dorado);
+
+    color: var(--negro);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.contacto-whatsapp:hover {
+    background: var(--blanco);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: var(--negro-3);
+
+    padding: 80px 7% 30px;
+
+    border-top: 1px solid #222;
+}
+
+.footer-top {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 80px;
+
+    padding-bottom: 70px;
+}
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-logo {
+    display: inline-block;
+
+    color: var(--blanco);
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+
+    transition: color 0.3s ease;
+}
+
+.footer-logo:hover {
+    color: var(--dorado);
+}
+
+.footer-brand p {
+    color: var(--gris-oscuro);
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+.footer-links,
+.footer-contacto {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.footer h3 {
+    color: var(--dorado);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-contacto a,
+.footer-contacto span {
+    color: var(--gris-oscuro);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-contacto a:hover {
+    color: var(--blanco);
+}
+
+.footer-contacto a {
+    color: var(--dorado);
+
+    margin-top: 5px;
+}
+
+.footer-bottom {
+    padding-top: 25px;
+
+    border-top: 1px solid #222;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #555;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   ANIMACIONES SCROLL
+========================= */
+
+.animar {
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.animar.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   ANIMACIÓN HERO
+========================= */
+
+.hero-content {
+    animation: heroEntrada 1s ease forwards;
+}
+
+@keyframes heroEntrada {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .header {
+        padding: 0 5%;
+    }
+
+    .hero,
+    .servicios,
+    .galeria,
+    .sobre-nosotros,
+    .reserva,
+    .contacto,
+    .footer {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .reserva-contenido {
+        gap: 50px;
+    }
+
+    .footer-top {
+        gap: 40px;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+
+    .header {
+        height: auto;
+
+        min-height: 70px;
+
+        padding: 18px 6%;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        display: block;
+
+        margin-left: auto;
+    }
+
+    .nav {
+        display: none;
+
+        order: 3;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 25px;
+
+        padding: 25px 0 10px;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        font-size: 16px;
+    }
+
+    .nav a::after {
+        display: none;
+    }
+
+    .btn-reserva {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: calc(100svh - 70px);
+
+        padding: 80px 6%;
+
+        background-position: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-subtitle {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 18px;
+    }
+
+    .hero h1 {
+        font-size: clamp(50px, 15vw, 75px);
+
+        line-height: 0.9;
+
+        letter-spacing: -2px;
+
+        margin-bottom: 25px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+
+        line-height: 1.6;
+
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* SERVICIOS */
+
+    .servicios {
+        padding: 80px 6%;
+    }
+
+    .section-header {
+        margin-bottom: 45px;
+    }
+
+    .section-header::after {
+        margin-top: 25px;
+    }
+
+    .section-subtitle {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+    .section-header h2 {
+        font-size: clamp(40px, 12vw, 60px);
+    }
+
+    .section-description {
+        font-size: 15px;
+    }
+
+    .servicios-container {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .servicio-card {
+        min-height: 280px;
+
+        padding: 30px;
+    }
+
+    .servicio-card:hover {
+        transform: none;
+
+        box-shadow: none;
+    }
+
+    .servicio-number {
+        margin-bottom: 35px;
+    }
+
+    .servicio-card h3 {
+        font-size: 25px;
+    }
+
+
+    /* GALERÍA */
+
+    .galeria {
+        padding: 80px 6%;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+
+        grid-template-rows: 400px 300px 300px;
+
+        gap: 15px;
+    }
+
+    .galeria-principal {
+        grid-row: auto;
+    }
+
+    .galeria-item {
+        height: auto;
+    }
+
+    .galeria-ancha {
+        display: none;
+    }
+
+    .galeria-item:hover img {
+        transform: none;
+    }
+
+
+    /* SOBRE NOSOTROS */
+
+    .sobre-nosotros {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 80px 6%;
+    }
+
+    .sobre-imagen {
+        height: 450px;
+    }
+
+    .sobre-imagen:hover img {
+        transform: none;
+    }
+
+    .sobre-contenido h2 {
+        font-size: clamp(45px, 12vw, 65px);
+    }
+
+    .sobre-contenido > p:not(.section-subtitle) {
+        font-size: 15px;
+    }
+
+
+    /* ESTADÍSTICAS */
+
+    .estadisticas {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 25px;
+
+        margin-top: 35px;
+    }
+
+    .estadistica strong {
+        font-size: 28px;
+    }
+
+
+    /* RESERVA */
+
+    .reserva {
+        padding: 80px 6%;
+    }
+
+    .reserva-contenido {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .reserva-info h2 {
+        font-size: clamp(45px, 12vw, 65px);
+    }
+
+    .reserva-info > p:not(.section-subtitle) {
+        font-size: 15px;
+    }
+
+    .reserva-form {
+        padding: 30px 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .btn-whatsapp:hover {
+        transform: none;
+
+        box-shadow: none;
+    }
+
+
+    /* CONTACTO */
+
+    .contacto {
+        padding: 80px 6%;
+    }
+
+    .contacto h2 {
+        font-size: clamp(45px, 12vw, 65px);
+    }
+
+    .contacto-contenido > p:not(.section-subtitle) {
+        font-size: 15px;
+    }
+
+    .contacto-whatsapp:hover {
+        transform: none;
+
+        box-shadow: none;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 60px 6% 25px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding-bottom: 45px;
+    }
+
+    .footer-logo {
+        font-size: 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}
+
+
+/* =========================
+   REDUCIR ANIMACIONES
+   PARA USUARIOS QUE LO PREFIEREN
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
